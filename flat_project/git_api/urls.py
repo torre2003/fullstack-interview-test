@@ -15,7 +15,7 @@ urlpatterns = [
         name='branch_list'
     ),
     path(
-        'branches/<str:pk>/',
+        'branches/<path:pk>/',
         BranchDetailViewSet.as_view({'get': 'retrieve'}),
         name='branch_detail'
      ),
