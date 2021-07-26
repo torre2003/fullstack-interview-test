@@ -3,7 +3,9 @@ from git_api.apps import GitApiConfig
 from .views import (
     BranchDetailViewSet,
     BranchListViewSet,
-    CommitDetailViewSet
+    CommitDetailViewSet,
+    PullRequestListApiView,
+    PullRequestDetailApiView
 )
 
 app_name = GitApiConfig.name
@@ -23,5 +25,15 @@ urlpatterns = [
         'commits/<str:pk>/',
         CommitDetailViewSet.as_view({'get': 'retrieve'}),
         name='commit_detail'
+    ),
+    path(
+        'pull-requests/',
+        PullRequestListApiView.as_view(),
+        name='pull_request_list'
+    ),
+    path(
+        'pull-requests/<int:pk>/',
+        PullRequestDetailApiView.as_view(),
+        name='pull_request_detail'
     ),
 ]
