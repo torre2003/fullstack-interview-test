@@ -42,6 +42,44 @@ class GitManager():
             raise Exception(f'Branch {branch_name} not found!')
         return branch
 
+    def branch_detail(self, branch_name):
+        """
+        Generate a branch detail for branch
+
+        Args:
+            branch_name: String with branch name
+
+        Returns:
+            Dictionary with summary for branch.
+            example:
+                {
+                    'branch_name': your_branche_name,
+                    'commits': [
+                       {
+                            'id': '...',
+                            'date': '...',
+                            'message': '...',
+                            'author_name': '...',
+                            'author_email': '...',
+                        }, ...
+                    ]
+                }
+
+        Raises:
+            Exception: If branch name not in repo
+        """
+        assert isinstance(branch_name, str), 'branch_name must be a string'
+        if branch_name not in self.get_branch_names():
+            raise Exception(f'Branch {branch_name} not exists!')
+        branch_detail = {
+            'branch_name': branch_name,
+            'commits': [
+                self.commit_detail(commit)
+                for commit in self.repo.iter_commits(branch_name)
+            ]
+        }
+        return branch_detail
+
     def get_commit(self, commit_id):
         """
         Get a commit of repo
