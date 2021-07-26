@@ -2,7 +2,8 @@ from django.urls import path
 from git_api.apps import GitApiConfig
 from .views import (
     BranchDetailViewSet,
-    BranchListViewSet
+    BranchListViewSet,
+    CommitDetailViewSet
 )
 
 app_name = GitApiConfig.name
@@ -18,4 +19,9 @@ urlpatterns = [
         BranchDetailViewSet.as_view({'get': 'retrieve'}),
         name='branch_detail'
      ),
+    path(
+        'commits/<str:pk>/',
+        CommitDetailViewSet.as_view({'get': 'retrieve'}),
+        name='commit_detail'
+    ),
 ]
