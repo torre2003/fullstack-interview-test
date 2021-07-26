@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'rest_framework',
     'corsheaders',
+    # Backend apps
+    'git_api',
 ]
 
 MIDDLEWARE = [
