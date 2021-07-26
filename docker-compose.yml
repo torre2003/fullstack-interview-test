@@ -1,0 +1,32 @@
+version: '3'
+
+volumes:
+  database_data:
+    driver: local
+services:
+  db-flat-project:
+    image: postgres
+    environment:
+      POSTGRES_DB: flat-project
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - database_data:/var/lib/postgresql/data
+  web-flat-project:
+    build: .
+    command: >
+          sh -c "
+          python3 manage.py migrate &&
+          python3 manage.py runserver 0.0.0.0:8000 --settings=flat_project.settings"
+    container_name: flat-project
+    volumes:
+      - ./flat_project/:/flat_project
+      - .:/git_project
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db-flat-project
+    env_file:
+    - .env
