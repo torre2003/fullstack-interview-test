@@ -25,6 +25,7 @@ You can up the project with next command
 ```
 docker-compose up
 ```
+**Very important**, when you run project first time, this fail because postgres machine is in setup and django requests the services before that finish. Just press `ctrl + c` and try again.
 
 ## Notes
 
