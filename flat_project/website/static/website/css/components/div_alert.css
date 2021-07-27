@@ -1,0 +1,9 @@
+/**
+ * Styles for component DivAlert
+ */
+.div-alert-message {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+}
