@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'corsheaders',
     # Backend apps
     'git_api',
+    # Front apps
+    'website',
 ]
 
 MIDDLEWARE = [
