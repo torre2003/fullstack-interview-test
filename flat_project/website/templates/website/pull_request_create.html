@@ -1,0 +1,18 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <div id="formContainer" class="d-flex pt-3"></div>
+</div>
+{% endblock body %}
+
+{% block js %}
+<script src="{% static 'website/js/services/git.js' %}"></script>
+<script src="{% static 'website/js/components/div_title.js' %}"></script>
+<script src="{% static 'website/js/components/form_pull_request.js' %}"></script>
+<script src="{% static 'website/js/pages/pull_request_create.js' %}"></script>
+{% endblock js %}
