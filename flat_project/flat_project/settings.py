@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'rest_framework',
     'corsheaders',
+    # Backend apps
+    'git_api',
 ]
 
 MIDDLEWARE = [
@@ -167,3 +169,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 SITE_ID = 1
+
+GIT_REPO_PATH = os.environ.get('GIT_REPO_PATH', '')
