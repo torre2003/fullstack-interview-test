@@ -1,5 +1,5 @@
 """
-Django settings for flat project project.
+Django settings for flat project.
 """
 
 import os
@@ -39,7 +39,6 @@ if DEBUG:
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
