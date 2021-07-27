@@ -1,0 +1,23 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'website/css/components/div_alert.css' %}">
+{% endblock css %}
+
+{% block body %}
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0">Commit List</h6>
+    <div class="d-flex pt-3">
+        <div id="commitTableContainer" class="table-responsive w-100">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'website/js/services/git.js' %}"></script>
+<script src="{% static 'website/js/components/div_alert.js' %}"></script>
+<script src="{% static 'website/js/components/div_title.js' %}"></script>
+<script src="{% static 'website/js/components/table_commit_list.js' %}"></script>
+<script src="{% static 'website/js/pages/branch_detail.js' %}"></script>
+{% endblock js %}

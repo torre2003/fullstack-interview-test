@@ -1,0 +1,20 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'website/css/components/div_alert.css' %}">
+{% endblock css %}
+
+{% block body %}
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <div id="detailCommitContainer" class="d-flex"></div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'website/js/services/git.js' %}"></script>
+<script src="{% static 'website/js/components/div_alert.js' %}"></script>
+<script src="{% static 'website/js/components/div_title.js' %}"></script>
+<script src="{% static 'website/js/components/ul_commit_detail.js' %}"></script>
+<script src="{% static 'website/js/pages/commit_detail.js' %}"></script>
+{% endblock js %}

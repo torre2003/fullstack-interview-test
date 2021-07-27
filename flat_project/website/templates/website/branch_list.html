@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}
+Welcome to your Git Repo
+{% endblock %}
+
+{% block css %}
+<style>
+    .branch-image{
+        content:url("{% static 'website/img/branch.svg' %}");
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<div id="branchContainer" class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0">Branch list</h6>
+</div>
+{% endblock body %}
+
+{% block js %}
+<script src="{% static 'website/js/services/git.js' %}"></script>
+<script src="{% static 'website/js/components/div_title.js' %}"></script>
+<script src="{% static 'website/js/components/div_branch_list.js' %}"></script>
+<script src="{% static 'website/js/pages/branch_list.js' %}"></script>
+{% endblock js %}

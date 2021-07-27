@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>Flat Mx - Test</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'website/img/favicon.ico' %}" />
+        <link href="{% static 'website/css/vendor/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'website/css/styles.css' %}" rel="stylesheet">
+        {% block css %}{% endblock css %}
+    </head>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'website:branch_list' %}">Flat MX - Test</a>
+            </div>
+        </nav>
+        <div class="nav-scroller bg-body shadow-sm">
+            <nav class="nav nav-underline" aria-label="Secondary navigation">
+              <a class="nav-link" href="{% url 'website:branch_list' %}">Branches</a>
+              <a class="nav-link" href="{% url 'website:pull_request' %}">Pull Requests</a>
+            </nav>
+          </div>
+        <main class="container">
+            <div id="titleContainer" class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm"></div>
+            {% block body %}{% endblock body %}
+        </main>
+        <script src="{% static 'website/js/vendor/bootstrap.bundle.min.js' %}"></script>
+        {% block js %}{% endblock js %}
+    </body>
+</html>

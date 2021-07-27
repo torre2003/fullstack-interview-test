@@ -1,0 +1,25 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'website/css/components/div_alert.css' %}">
+{% endblock css %}
+
+{% block body %}
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <div id="headerPullRequestListContainer"></div>
+    <div class="d-flex pt-3">
+        <div id="pullRequestTableContainer" class="table-responsive w-100"></div>
+    </div>
+</div>
+{% endblock body %}
+
+{% block js %}
+<script src="{% static 'website/js/services/git.js' %}"></script>
+<script src="{% static 'website/js/components/div_alert.js' %}"></script>
+<script src="{% static 'website/js/components/div_title.js' %}"></script>
+<script src="{% static 'website/js/components/div_header_pull_request_list.js' %}"></script>
+<script src="{% static 'website/js/components/table_pull_request_list.js' %}"></script>
+<script src="{% static 'website/js/components/button_close_pull_request.js' %}"></script>
+<script src="{% static 'website/js/pages/pull_request_list.js' %}"></script>
+{% endblock js %}
