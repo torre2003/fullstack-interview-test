@@ -27,6 +27,11 @@ docker-compose up
 ```
 **Very important**, when you run project first time, this fail because postgres machine is in setup and django requests the services before that finish. Just press `ctrl + c` and try again.
 
+## Website
+```
+localhost:8000
+```
+
 ## Notes
 
 - Only for this interview test, i shared `.env` file for simplify in setup
