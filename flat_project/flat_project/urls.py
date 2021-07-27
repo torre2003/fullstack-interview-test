@@ -6,4 +6,5 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('git_api.urls')),
+    path('', include('website.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
